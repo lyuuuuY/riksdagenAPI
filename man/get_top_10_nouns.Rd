@@ -6,6 +6,19 @@
 \usage{
 get_top_10_nouns(start_date, end_date, type_speech, party, member, size)
 }
+\arguments{
+\item{start_date}{}
+
+\item{end_date}{}
+
+\item{type_speech}{}
+
+\item{party}{}
+
+\item{member}{}
+
+\item{size}{}
+}
 \value{
 first_10
 }
