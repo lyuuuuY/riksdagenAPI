@@ -1,0 +1,17 @@
+Package: Rapi
+Type: Package
+Title: What the Package Does (Short Line)
+Version: 1.0
+Date: 2024-10-07
+Author: Who wrote it
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Imports:
+    httr,
+    xml2,
+    tm,
+    udpipe,
+    stopwords
+Encoding: UTF-8
+Description: More about what it does (maybe more than one line).
+License: What license is it under?
+RoxygenNote: 7.3.2.9000
