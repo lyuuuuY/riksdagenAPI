@@ -91,7 +91,7 @@ function(start_date,end_date,type_speech,party,member,size){
   parsed_xml <- xml2::read_xml(data)
   anforanden <- xml2::xml_find_all(parsed_xml, "//anforande")
   anforande_count <- length(anforanden)
-  print(paste("the number of speeches:", anforande_count))
+  #print(paste("the number of speeches:", anforande_count))
   
   urls <- xml2::xml_text(xml2::xml_find_all(anforanden, ".//anforande_url_xml"))
   if(length(urls) == 0){
@@ -124,7 +124,9 @@ function(start_date,end_date,type_speech,party,member,size){
   docs <- tm::tm_map(docs, tm::removeWords, stopwords("sv"))
   
   custom_stopwords <- c("dag", "\u00E5r", "regering", "fr\u00E5ga", "del", "talman", 
-                        "m\u00F6jlighet", "tid", "fr\u00E5ga", "utredning")
+                        "m\u00F6jlighet", "tid", "fr\u00E5ga", "utredning","fr\u00E5ga ",
+                        "exempel","koppling"
+                        )
   
   docs <- tm::tm_map(docs, tm::removeWords, custom_stopwords)
   
@@ -141,7 +143,11 @@ function(start_date,end_date,type_speech,party,member,size){
   noun_frequency_sorted <- sort(noun_frequency, decreasing = TRUE)
   
   first_10 <- head(noun_frequency_sorted, 10)
-  print(first_10)
   
-  return(first_10)
+  lst <- list(
+    anforande_count = anforande_count,
+    first_10 = first_10
+  )
+  return(lst)
 }
+
