@@ -16,6 +16,8 @@ Imports:
     xml2,
     tm,
     udpipe,
+    future.apply,
+    future,
     stopwords
 Encoding: UTF-8
 Description: More about what it does (maybe more than one line).
