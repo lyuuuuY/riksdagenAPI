@@ -1,6 +1,6 @@
 Package: riksdagenAPI
 Type: Package
-Title: What the Package Does (Short Line)
+Title: Get Top 10 Nouns from Swedish Political Speeches
 Version: 1.0
 Date: 2024-10-07
 Author: (
@@ -20,9 +20,12 @@ Imports:
     future,
     stopwords
 Encoding: UTF-8
-Description: More about what it does (maybe more than one line).
+Description: This package retrieves the top 10 nouns from political speeches based on specific criteria such as date range, type of speech, party, member ID, and size of the response.
 License: GPL-3
 RoxygenNote: 7.3.2.9000
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+VignetteBuilder: knitr

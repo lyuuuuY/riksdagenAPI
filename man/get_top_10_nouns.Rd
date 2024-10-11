@@ -2,26 +2,32 @@
 % Please edit documentation in R/get_top_10_nouns.R
 \name{get_top_10_nouns}
 \alias{get_top_10_nouns}
-\title{Title}
+\title{Get Top 10 Nouns from Political Speeches}
 \usage{
 get_top_10_nouns(start_date, end_date, type_speech, party, member, size)
 }
 \arguments{
-\item{start_date}{the start of date(yyyy-mm-dd),or skip}
+\item{start_date}{The start date in 'yyyy-mm-dd' format. Optional.}
 
-\item{end_date}{the end of date(yyyy-mm-dd),or skip}
+\item{end_date}{The end date in 'yyyy-mm-dd' format. Optional.}
 
-\item{type_speech}{"Nej" or skip}
+\item{type_speech}{Type of speech. Either `"Nej"` or skip. Optional.}
 
-\item{party}{"c", "l", "kd", "mp", "m", "s", "sd", "v", "-", "nyd" or skip}
+\item{party}{Political party abbreviation.Options:`"c"`, `"l"`, `"kd"`, 
+`"mp"`, `"m"`, `"s"`, `"sd"`, `"v"`, `"-"`, `"nyd"` or skip}
 
-\item{member}{"id of member" or skip}
+\item{member}{Member Id as a numeric value or skip.Optional.}
 
-\item{size}{(10,50,200,1000,2000,5000,10000)}
+\item{size}{Size of feedback. Choose from `"10"`,`"50"`,`"200"`,`“1000"`,
+`"2000"`,`"5000"`,`"10000"`}
 }
 \value{
-first_10
+first_10 A list containing:
+  *`anforande_count`:The number of speeches retrieved.
+  *`first_10`:A named vector of the top 10 nouns and their frequencies.
 }
 \description{
-Title
+This function retrieves the top 10 nouns from political speeches based on 
+  the specific criteria such as date range, type of speech,party affiliation,
+  member ID, and size of the response.
 }

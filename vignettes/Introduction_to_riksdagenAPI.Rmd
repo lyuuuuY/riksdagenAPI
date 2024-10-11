@@ -1,0 +1,69 @@
+---
+title: "Introduction_to_riksdagenAPI"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction_to_riksdagenAPI}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+# Introduction
+
+  This package filters speeches based on the user-provided party and date range, 
+  and returns the top ten nouns from the speeches.
+
+## Installing the Package
+
+```{r install,eval = FALSE}
+install.packages("riskdagenAPI")
+```
+
+## Loading the Package
+
+```{r load, eval = FALSE}
+library("riskdagenAPI")
+```
+
+## Choosing the Parameters
+
+First, type the following values that you are interested in:`start_date`,`end_date`,`type_speech`,`party`,`member`,`size`.
+
+Every value should follow the rules below:
+
+-`start_date`:A string representing the date in `YYYY-MM-DD` format, or use 
+`"skip"` to omit this parameter. 
+
+-`end_date`:yyyy-mm-dd or skip.
+
+-`type_speech`:`Nej`or skip.
+
+-`party`:`"c"`, `"l"`, `"kd"`, `"mp"`, `"m"`, `"s"`, `"sd"`, `"v"`, `"-"`, 
+`"nyd"` or skip.
+
+-`member`:"ID of member" or skip.
+
+-`size`:`"10"`,`"50"`,`"200"`,`“1000"`,`"2000"`,`"5000"`,`"10000"`.
+
+## Example
+
+Now, use the following function to fetch the data :
+```{r example,eval = FALSE}
+#Define parameters
+start_date <- "2015-01-01"
+end_date <- "2024-01-01"
+type_speech <- ""          #Use ""to skip this parameter
+party <- ""                #Use ""to skip this parameter
+member <- "0729710260118"  #ID of member
+size <- "1000"             #Size of result
+#Fetch the data
+result <- get_top_10_nouns(start_date,end_date,type_speech,party,member,size)
+print(result)
+```
+
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
